@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 
 @Entity
 public class Payment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,6 +19,8 @@ public class Payment {
 
     @OneToOne(fetch = FetchType.LAZY)
     private Ride ride;
+
+    private Double amount;
 
     @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus;
